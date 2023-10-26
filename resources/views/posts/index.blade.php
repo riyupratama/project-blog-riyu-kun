@@ -35,8 +35,8 @@
                         <td>{{ $post['title'] }}</td>
                         <td>{!! $post['content'] !!}</td>
                         <td>
-                            <a class="btn btn-primary" href="">Show</a>
-                            <a class=" btn btn-warning" href="">Edit</a>
+                            <a class="btn btn-primary" href="{{ route('posts.show', $post['id']) }}">Show</a>
+                            <a class=" btn btn-warning" href="/posts/{{ $post['id'] }}">Edit</a>
                             @csrf
                             @method('DELETE')
                             <button class="btn btn-danger">Delete</button>

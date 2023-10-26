@@ -21,12 +21,6 @@ class PostController extends Controller
         return view('posts.create');
     }
 
-    /**
-     * store
-     *
-     * @param  mixed $request
-     * @return RedirectResponse
-     */
     public function store(Request $request)
     {
         //validate form
@@ -49,5 +43,12 @@ class PostController extends Controller
 
         //redirect to index
         return redirect()->route('posts.index')->with(['success' => 'Data Berhasil Disimpan!']);
+    }
+
+    public function show($id)
+    {
+        $post = Post::FindOrFail($id);
+
+        return view('posts.show', compact('post'));
     }
 }
