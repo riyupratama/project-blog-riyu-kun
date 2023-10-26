@@ -12,7 +12,7 @@
   </head>
   <body>
     <div class="container-fluid">
-        <h1 class="text-center text-primary mt-3">Post Database!</h1>
+        <h1 class="text-center mt-3">Post Database!</h1>
 
         <div class="row mt-5">
             <div class="col-12 mt-5">
@@ -23,7 +23,7 @@
                         <th scope="col">ID</th>
                         <th scope="col" class="w-25">Image</th>
                         <th scope="col">Title</th>
-                        <th scope="col">Content</th>
+                        <th scope="col" class="w-25">Content</th>
                         <th scope="col">Action</th>
                       </tr>
                     </thead>
@@ -33,13 +33,15 @@
                         <th scope="row">{{ $post['id'] }}</th>
                         <td><img class="w-50" src="/storage/posts/{{ $post['image'] }}" alt=""></td>
                         <td>{{ $post['title'] }}</td>
-                        <td>{!! $post['content'] !!}</td>
+                        <td>{!!  Str::limit($post->content, 100)  !!}</td>
                         <td>
                             <a class="btn btn-primary" href="{{ route('posts.show', $post['id']) }}">Show</a>
                             <a class=" btn btn-warning" href="/posts/{{ $post['id'] }}">Edit</a>
-                            @csrf
-                            @method('DELETE')
-                            <button class="btn btn-danger">Delete</button>
+                            <form class="d-inline" action="{{ route('posts.destroy', $post->id) }}" method="post" onclick="return confirm('Yakin ingin menghapus data?')">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
                         </td>
                         </tr>
                         @empty
