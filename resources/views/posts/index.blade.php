@@ -31,7 +31,7 @@
                     @forelse ($posts as $post)
                         <tr>
                         <th scope="row">{{ $post['id'] }}</th>
-                        <td><img class="w-50" src="/storage/posts/{{ $post['image'] }}" alt=""></td>
+                        <td><img class="w-50 img-thumbnail" src="/storage/posts/{{ $post['image'] }}" alt=""></td>
                         <td>{{ $post['title'] }}</td>
                         <td>{!!  Str::limit($post->content, 100)  !!}</td>
                         <td>
