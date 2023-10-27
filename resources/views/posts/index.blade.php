@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
@@ -21,9 +22,9 @@
                     <thead>
                       <tr>
                         <th scope="col">ID</th>
-                        <th scope="col" class="w-25">Image</th>
+                        <th scope="col" class="img">Image</th>
                         <th scope="col">Title</th>
-                        <th scope="col" class="w-25">Content</th>
+                        <th scope="col" class="">Content</th>
                         <th scope="col">Action</th>
                       </tr>
                     </thead>
@@ -31,10 +32,10 @@
                     @forelse ($posts as $post)
                         <tr>
                         <th scope="row">{{ $post['id'] }}</th>
-                        <td><img class="w-50 img-thumbnail" src="/storage/posts/{{ $post['image'] }}" alt=""></td>
+                        <td class="text-center td-img"><img class="w-100" src="/storage/posts/{{ $post['image'] }}" alt=""></td>
                         <td>{{ $post['title'] }}</td>
                         <td>{!!  Str::limit($post->content, 100)  !!}</td>
-                        <td>
+                        <td class="action">
                             <a class="btn btn-primary" href="{{ route('posts.show', $post['id']) }}">Show</a>
                             <a class=" btn btn-warning" href="/posts/{{ $post['id'] }}">Edit</a>
                             <form class="d-inline" action="{{ route('posts.destroy', $post->id) }}" method="post" onclick="return confirm('Yakin ingin menghapus data?')">
