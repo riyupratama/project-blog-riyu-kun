@@ -13,7 +13,23 @@
   </head>
   <body>
     <div class="container-fluid">
+      <form action="{{ route('logout') }}" method="post" class="mt-4">
+        @csrf
+        <button class="btn btn-dark">Logout</button>
+      </form>
         <h1 class="text-center mt-3">Post Database!</h1>
+        @if (Session()->has('success'))
+        <div class="w-100 d-flex justify-content-end">
+          <div class="alert alert-success d-flex align-items-center alert-dismissible fade show w-lg-25" role="alert">
+            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+            <div>
+              {{ Session::get('success') }}
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+
+        </div>
+        @endif
 
         <div class="row mt-5">
             <div class="col-12 mt-5">
@@ -66,6 +82,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
     <script>

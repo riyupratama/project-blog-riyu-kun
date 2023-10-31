@@ -104,6 +104,6 @@ class PostController extends Controller
         // hapus postingan
         $post->delete();
 
-        return redirect()->route('posts.index')->with(['success' => 'Postingan berhasil dihapus!']);
+        return redirect()->route('posts.index')->with('success','Post berhasil dihapus!');
     }
 }

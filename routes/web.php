@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PostController;
+use App\Http\Middleware\OnlyUserMiddleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,3 +17,10 @@ use App\Http\Controllers\PostController;
 */
 
 Route::resource('/posts', PostController::class);
+Route::controller(AuthController::class)->middleware('guest')->group(function() {
+    Route::get('login', 'login')->name('login');
+    Route::post('login', 'loginPost')->name('login');
+    Route::get('register', 'register')->name('register');
+    Route::post('register', 'registerPost')->name('register');
+});
+Route::post('logout', [AuthController::class, 'logout'])->name('logout');
