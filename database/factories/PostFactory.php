@@ -2,8 +2,9 @@
 
 namespace Database\Factories;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Post;
+use Illuminate\Support\Str;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 
 /**
@@ -22,7 +23,9 @@ class PostFactory extends Factory
             //
             "image" => fake()->image('public/storage/posts',640,480, null, false),
             "title" => fake()->sentence,
-            "content" => fake()->paragraph
+            "slug" => Str::slug(fake()->sentence),
+            "content" => fake()->paragraphs(5, true),
+            "user_id" => mt_rand(1, 2)
         ];
     }
 }

@@ -3,16 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
-use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
     public function index()
-    {
-        $posts = Post::latest()->paginate(5);
+    {   
+        $user = Auth::user()->id;
+        $posts = Post::latest()->where('user_id', $user)->paginate(5);
 
         return view('posts.index', compact('posts'));
     }
@@ -39,7 +42,9 @@ class PostController extends Controller
         Post::create([
             'image'     => $image->hashName(),
             'title'     => $request->title,
-            'content'   => $request->content
+            'slug'      => Str::slug($request->title), 
+            'content'   => $request->content,
+            'user_id'   => Auth::user()->id
         ]);
 
         //redirect to index

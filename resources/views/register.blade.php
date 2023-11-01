@@ -42,6 +42,7 @@
                       <input type="password" name="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
                     </div>
                     <button type="submit" class="btn btn-primary">Register</button>
+                    <span>You have account? </span><a href="login">Login</a>
                   </form>
             </div>
         </div>

@@ -16,7 +16,7 @@ use App\Http\Middleware\OnlyUserMiddleware;
 |
 */
 
-Route::resource('/posts', PostController::class);
+Route::resource('/posts', PostController::class)->middleware('auth');
 Route::controller(AuthController::class)->middleware('guest')->group(function() {
     Route::get('login', 'login')->name('login');
     Route::post('login', 'loginPost')->name('login');
