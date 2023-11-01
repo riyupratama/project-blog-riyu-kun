@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Middleware\OnlyUserMiddleware;
 
@@ -15,7 +16,7 @@ use App\Http\Middleware\OnlyUserMiddleware;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+Route::get('/', [HomeController::class, 'index']);
 Route::resource('/posts', PostController::class)->middleware('auth');
 Route::controller(AuthController::class)->middleware('guest')->group(function() {
     Route::get('login', 'login')->name('login');
