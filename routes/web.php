@@ -25,3 +25,4 @@ Route::controller(AuthController::class)->middleware('guest')->group(function() 
     Route::post('register', 'registerPost')->name('register');
 });
 Route::post('logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('read/{slug}',[HomeController::class, 'read']);

@@ -11,66 +11,31 @@
     <title>Home Page</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light ps-lg-5">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </li>
-            </ul>
-            <form class="d-flex me-2 mb-3 mb-md-0">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-dark" type="submit">Search</button>
-            </form>
-                <a href="login" class="btn btn-dark">Login</a>
-          </div>
-        </div>
-      </nav>
+    @extends('layouts.app')
 
-      <div class="container-fluid mt-3">
-        <div class="row">
-            {{-- content --}}
-            <div class="col-md-9">
-                <div id="content" class="pt-3">
-                    <div class="row">
-                        <h3 class="ms-5">Latest Post</h3><hr>
-                        @foreach ($posts as $post)
-                        <div class="col-lg-4 px-5 mb-3 d-flex justify-content-center">
-                            <div class="card" style="width: 18rem;">
-                                <img src="storage/posts/{{ $post->image }}" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                  <a href="read/{{ $post->slug }}" class="card-title decoration-none text-dark fw-bolder fs-5">{{ $post->title }}</a>
-                                  <p class="card-text mt-3">{!!  Str::limit($post->content, 100)  !!}</p>
-                                  <a href="read/{{ $post->slug }}" class="btn btn-primary">Go somewhere</a>
-                                </div>
-                            </div>
-                        </div>
-                        @endforeach
-                        <div class="paginate d-flex justify-content-center my-2">
-                            {{ $posts->links() }}
-                        </div>
-                    </div>
-                </div>
-            </div>
+      @section('content')
+      <div id="content" class="pt-3">
+          <div class="row">
+              <h3 class="ms-5">Latest Post</h3>
+              @foreach ($posts as $post)
+              <div class="col-lg-4 px-5 mb-3 d-flex justify-content-center">
+                  <div class="card" style="width: 18rem;">
+                      <img src="storage/posts/{{ $post->image }}" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <div class="card-title m-0"><a href="read/{{ $post->slug }}" class="card-title fw-bolder">{{ $post->title }}</a></div>
+                        <span class="card-author"><i class="fa-sharp fa-solid fa-user"></i><a href="" class="ms-2">{{ $post->user->name }}</a></span>
+                        <p class="card-text mt-3">{!!  Str::limit($post->content, 100)  !!}</p>
+                        <a href="read/{{ $post->slug }}" class="btn btn-primary">Go somewhere</a>
+                      </div>
+                  </div>
+              </div>
+              @endforeach
+              <div class="paginate d-flex justify-content-center my-2">
+                  {{ $posts->links() }}
+              </div>
+          </div>
+      </div>
+      @endsection
             {{-- sidebar --}}
             <div class="col-md-3">
 

@@ -9,3 +9,24 @@ td.action{
 td.action{
     margin-bottom: 30px;
 }
+
+.card-title{
+    font-size: 17px;
+}
+
+.card-author{
+    font-size: 12px;
+    margin-top: -10px;
+}
+a{
+    text-decoration: none;
+    /* color: black; */
+}
+
+h1.detail-post-title{
+    position: relative;
+    margin-top: -70px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px 0;
+    color: #fff;
+}

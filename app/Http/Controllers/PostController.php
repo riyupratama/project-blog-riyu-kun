@@ -85,6 +85,7 @@ class PostController extends Controller
             $post->update([
                 'image' => $image->hashName(),
                 'title' => $request->title,
+                'slug' => Str::slug($request->title),
                 'content' => $request->content
             ]);
         }
