@@ -8,6 +8,9 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
+    {{-- fontawesome --}}
+    <script src="https://kit.fontawesome.com/4ca5a8c4a1.js" crossorigin="anonymous"></script>
+
     <title>Edit Post!</title>
   </head>
   <body>
@@ -28,10 +31,11 @@
                         <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Input title"  name="title" value="{{ $post['title'] }}">
                       </div>
                       <div class="mb-3">
-                        <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+                        <label for="exampleFormControlTextarea1" class="form-label">Type in here</label>
                         <textarea class="form-control" name="content" rows="5" name="content" placeholder="Masukkan Konten Post">{{ $post['content'] }}</textarea>
                       </div>
-                      <button type="submit" class="btn btn-success">Save</button>
+                      <a href="/posts" class="btn btn-dark me-2"><i class="fa-solid fa-arrow-left"></i> Back</a>
+                      <button type="submit" class="btn btn-success"><i class="fa-solid fa-floppy-disk"></i> Save</button>
                 </form>
             </div>
         </div>

@@ -30,3 +30,14 @@ h1.detail-post-title{
     padding: 10px 0;
     color: #fff;
 }
+
+img.selected-post-image{
+    filter: brightness(50%);
+}
+
+.content-latest-post{
+    position: relative;
+    margin-top: -100px;
+    padding: 10px 0;
+    color: #fff;
+}

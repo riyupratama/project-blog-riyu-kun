@@ -7,16 +7,21 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {   
         $user = Auth::user()->id;
-        $posts = Post::latest()->where('user_id', $user)->paginate(5);
+        $keyword = $request->search;
 
+        $posts = Post::latest()
+                        ->where('user_id', $user)
+                        ->where('title','LIKE','%'.$keyword.'%')
+                        ->paginate(5);
+
+        // return json_encode($posts);
         return view('posts.index', compact('posts'));
     }
 

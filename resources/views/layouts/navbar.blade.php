@@ -23,8 +23,8 @@
             </ul>
           </li>
         </ul>
-        <form class="d-flex me-2 mb-3 mb-md-0">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <form class="d-flex me-2 mb-3 mb-md-0" action="" method="GET">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search">
             <button class="btn btn-outline-dark" type="submit">Search</button>
         </form>
             @if (Auth::check())

@@ -1,22 +1,18 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-    <title>Home Page</title>
-  </head>
-  <body>
-    @extends('layouts.app')
+@extends('layouts.app')
 
       @section('content')
-      <div id="content" class="pt-3">
+      <div id="content" class="pt-1">
           <div class="row">
-              <h3 class="ms-5">Latest Post</h3>
+              {{-- section selected posts --}}
+              <section class="selected-post">
+                <img src="storage/posts/{{ $posts[0]->image }}" alt="" class="selected-post-image w-100">
+                <div class="content-latest-post">
+                  <div class="selected-post-title fs-2 text-center">{{ $posts[0]->title }}</div>
+                  <div class="selected-post-author text-center">Ditulis oleh : <a href="" class="ms-2 text-white">{{ $posts[0]->user->name }}</a></div>
+                </div>
+              </section>
+              {{-- section latest posts --}}
+              <h3 class="ms-5 mt-5">Latest Posts</h3>
               @foreach ($posts as $post)
               <div class="col-lg-4 px-5 mb-3 d-flex justify-content-center">
                   <div class="card" style="width: 18rem;">
