@@ -19,12 +19,15 @@ class PostFactory extends Factory
      */
     public function definition(): array
     {
+        $category = ['PHP','JAVASCRIPT','HTML','CSS','LARAVEL'];
+        $arr_rand = array_rand($category, 1);
         return [
             //
-            "image" => fake()->image('public/storage/posts',640,480, null, false),
+            "image" => fake()->image('public/storage/posts',1000,556, 'technology', false),
             "title" => fake()->sentence,
             "slug" => Str::slug(fake()->sentence),
-            "content" => fake()->paragraphs(5, true),
+            "category" => $category[$arr_rand],
+            "content" => fake()->paragraphs(10, true),
             "user_id" => mt_rand(1, 2)
         ];
     }

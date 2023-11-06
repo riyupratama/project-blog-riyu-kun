@@ -23,12 +23,19 @@ a{
     /* color: black; */
 }
 
-h1.detail-post-title{
+.detail-title-wrapper{
     position: relative;
+    background-color:rgba(0, 0, 0, 0.7);
+    width: 100%;
+    min-height: 70px;
+}
+h1.detail-post-title{
+    /* position: relative; */
     margin-top: -70px;
-    background-color: rgba(0, 0, 0, 0.7);
+    /* background-color: rgba(0, 0, 0, 0.7); */
     padding: 10px 0;
     color: #fff;
+    font-size: 2em;
 }
 
 img.selected-post-image{
@@ -41,3 +48,46 @@ img.selected-post-image{
     padding: 10px 0;
     color: #fff;
 }
+
+.category-article{
+    position: absolute;
+    left: 50px;
+    color: #fff;
+    padding: 5px 15px;
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.category-articles{
+    position: absolute;
+    left: 10px;
+    color: #fff;
+    padding: 5px 15px;
+    font-size: 12px;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* responsive */
+@media only screen and (max-width: 991px) {
+    /* For tablets: */
+    .detail-title-wrapper{
+        min-height: 60px;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+    h1.detail-post-title{
+        margin-top: -60px;
+        font-size: 1em;
+    }
+    .detail-post-author{
+        position: relative;
+        top: 5px;
+        font-size: 0.5em;
+    }
+    .selected-post-title{
+        font-size: 1.25em !important;
+    }
+    .selected-post-author{
+        font-size: 0.5em !important;
+        margin-top: 5px;
+    }
+  }

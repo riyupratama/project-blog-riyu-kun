@@ -14,8 +14,8 @@
 
     {{-- css custom --}}
     <link rel="stylesheet" href="/assets/css/style.css">
-
-    <title>{{ $post->title }}</title>
+  
+    <title>@yield('title')</title>
   </head>
   <body>
     <nav class="navbar navbar-fixed-top navbar-expand-lg navbar-light bg-light ps-lg-5">
@@ -24,7 +24,7 @@
 
     <div class="container-fluid mt-3">
         <div class="row">
-            <div class="col-md-9">
+            <div class="col-md-9 pb-4">
                 @yield('content')
             </div>
             <div class="col-md-3 d-md-block sidebar border-start">

@@ -10,9 +10,12 @@ class HomeController extends Controller
     public function index(Request $request)
     {
         $keyword = $request->search;
+        $category = $request->category;
         $posts = Post::latest()->with('user')
                         ->where('title','LIKE','%'.$keyword.'%')
-                        ->paginate(6);
+                        ->where('category','LIKE','%'.$category.'%')
+                        ->paginate(6)
+                        ->withQueryString();
         return view('home', compact('posts'));
     }
 
