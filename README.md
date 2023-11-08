@@ -31,6 +31,6 @@ Requires Laravel v10 to run.
 
 ```sh
 git clone https://github.com/riyupratama/project-blog-riyu-kun.git
-Create database = belajar-laravel-crud
+Create database = db-laravel-crud
 php artisan migrate:fresh
 ```
