@@ -54,7 +54,7 @@
             </li>
         </ul>
             @else
-                <a href="login" class="btn btn-dark">Login</a>
+                <a href="/login" class="btn btn-dark">Login</a>
 
             @endif
       </div>

@@ -20,7 +20,7 @@
                 <span class="category-article">{{ $posts[0]->category }}</span>
                 <div class="content-latest-post text-center">
                   <a href="read/{{ $posts[0]->slug }}" class="selected-post-title fs-2 text-center text-white">{{ $posts[0]->title }}</a>
-                  <div class="selected-post-author">Ditulis oleh : <a href="" class="ms-2 text-white">{{ $posts[0]->user->name }}</a></div>
+                  <div class="selected-post-author">Ditulis oleh : <a href="/user/{{ $posts[0]->user->username }}" class="ms-2 text-white">{{ $posts[0]->user->name }}</a></div>
                 </div>
               </section>
               {{-- section latest posts --}}
@@ -33,7 +33,7 @@
                     <span class="category-articles">{{ $post->category }}</span>
                     <div class="card-body">
                       <div class="card-title m-0"><a href="read/{{ $post->slug }}" class="card-title fw-bolder">{{ $post->title }}</a></div>
-                      <span class="card-author"><i class="fa-sharp fa-solid fa-user"></i><a href="" class="ms-2">{{ $post->user->name }}</a></span>
+                      <span class="card-author"><i class="fa-sharp fa-solid fa-user"></i><a href="/user/{{ $post->user->username }}" class="ms-2">{{ $post->user->name }}</a></span>
                       <p class="card-text mt-3">{!!  Str::limit($post->content, 100)  !!}</p>
                       <a href="read/{{ $post->slug }}" class="btn btn-primary">Go somewhere</a>
                     </div>
