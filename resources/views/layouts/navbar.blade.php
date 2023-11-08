@@ -40,7 +40,7 @@
                     <button class="btn btn-dark">Logout</button>
                 </form>
             @else
-                <a href="login" class="btn btn-dark">Login</a>
+                <a href="/login" class="btn btn-dark">Login</a>
 
             @endif
       </div>
