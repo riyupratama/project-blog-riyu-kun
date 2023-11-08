@@ -7,5 +7,5 @@
         <h1 class="text-center detail-post-title">{{ $post->title }}</h1>
     </div>
     <p class="text-center detail-post-author">Ditulis oleh : <a href="">{{ $post->user->name }}</a></p>
-    {!! $post->content !!}
+    <p class="detail-post-content">{!! $post->content !!}</p>
 @endsection

@@ -91,6 +91,7 @@ class PostController extends Controller
                 'image' => $image->hashName(),
                 'title' => $request->title,
                 'slug' => Str::slug($request->title),
+                'category' => $request->category,
                 'content' => $request->content
             ]);
         }
@@ -98,6 +99,7 @@ class PostController extends Controller
         // update tanpa ada perubahan image
         $post->update([
             'title' => $request->title,
+            'category' => $request->category,
             'content' => $request->content
         ]);
 

@@ -38,6 +38,10 @@ h1.detail-post-title{
     font-size: 2em;
 }
 
+.detail-post-content{
+    font-size: 1.25em !important;
+}
+
 img.selected-post-image{
     filter: brightness(50%);
 }
@@ -82,6 +86,9 @@ img.selected-post-image{
         position: relative;
         top: 5px;
         font-size: 0.5em;
+    }
+    .detail-post-content{
+        font-size: 1.25em !important;
     }
     .selected-post-title{
         font-size: 1.25em !important;
