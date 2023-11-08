@@ -17,13 +17,17 @@
             <div class="col-12">
                 <form action="{{ route('posts.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
-                    <div class="mb-3">
+                      <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Image</label>
                         <input type="file" class="form-control" id="exampleFormControlInput1" placeholder="" name="image">
                       </div>
-                    <div class="mb-3">
+                      <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Title</label>
                         <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Input title"  name="title">
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Category</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="PHP/JAVASCRIPT/LARAVEL/ETC"  name="category">
                       </div>
                       <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>

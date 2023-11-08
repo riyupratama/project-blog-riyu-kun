@@ -19,18 +19,6 @@ class Post extends Model
         'content',
         'user_id'
     ];
-    
-    public function searchableAs()
-    {
-        return 'posts_index';
-    }
-
-    public function toSearchableArray()
-    {
-        return [
-            'title'     => $this->title,
-        ];
-    }
 
     public function user()
     {

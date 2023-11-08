@@ -36,6 +36,7 @@ class PostController extends Controller
         $this->validate($request, [
             'image'     => 'required|image|mimes:jpeg,jpg,png|max:2048',
             'title'     => 'required|min:5',
+            'category'     => 'required',
             'content'   => 'required|min:10'
         ]);
 
@@ -47,6 +48,7 @@ class PostController extends Controller
         Post::create([
             'image'     => $image->hashName(),
             'title'     => $request->title,
+            'category'     => $request->category,
             'slug'      => Str::slug($request->title), 
             'content'   => $request->content,
             'user_id'   => Auth::user()->id
