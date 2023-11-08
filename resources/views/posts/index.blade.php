@@ -30,7 +30,7 @@
 
   <div class="row mt-5">
     <div class="col-12 mt-5">
-        <a class="btn btn-success float-end me-5 mt-5" href="{{ route('posts.create') }}">New Post</a>
+        <a class="btn btn-success float-end mt-5" href="{{ route('posts.create') }}">New Post</a>
         <table class="table">
             <thead>
               <tr>
