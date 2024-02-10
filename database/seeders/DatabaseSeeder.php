@@ -7,6 +7,7 @@ use App\Models\Post;
 
 use Faker\Factory as Faker;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Storage;
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,6 +16,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        Storage::deleteDirectory('public/posts');
+        Storage::makeDirectory('public/posts');
         // \App\Models\Post::factory(20)->create();
 
         // \App\Models\User::factory()->create([
