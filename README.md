@@ -39,6 +39,7 @@ Requires Laravel v10 to run.
 - create database = db-laravel-crud
 - php artisan migrate
 - php artisan db:seed
+- php artisan storage:link
 - php artisan db:seed --class=UserSeeder
 - php artisan db:seed --class=PostSeeder
 - php artisan serve
