@@ -34,11 +34,12 @@ Requires Laravel v10 to run.
 - cd project_blog_riyu_kun
 - composer install
 - duplikat file .env-example kemudian ubah jadi .env
-- php artisan generate:key
+- php artisan key:generate
 - setting di file .env DB_DATABASE=db_laravel_crud
 - create database = db-laravel-crud
 - php artisan migrate
 - php artisan db:seed
+- php artisan storage:link
 - php artisan db:seed --class=UserSeeder
 - php artisan db:seed --class=PostSeeder
 - php artisan serve
