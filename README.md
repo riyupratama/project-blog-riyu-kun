@@ -45,3 +45,8 @@ Requires Laravel v10 to run.
 - php artisan serve
 
 ```
+
+## Default user
+
+Email = see in database user after you have run UserSeeder
+Password = 123123
